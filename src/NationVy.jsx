@@ -16,8 +16,9 @@ export default function NationVy({ slug }) {
       const rådata = localStorage.getItem(lagringsnyckel(slug))
       if (rådata) {
         const sparat = JSON.parse(rådata)
-        setHistorik(sparat.historik || [])
-        setAktuellt(sparat.aktuellt || null)
+        const giltigt = sparat.aktuellt && typeof sparat.aktuellt.replik === 'string'
+        setHistorik(giltigt ? (sparat.historik || []) : [])
+        setAktuellt(giltigt ? sparat.aktuellt : null)
       }
     } catch {
       // tomt lager, inget att göra
