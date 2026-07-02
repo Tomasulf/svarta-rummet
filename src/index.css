@@ -314,6 +314,24 @@ body {
   line-height: 1.7;
 }
 
+.telegram__etikett {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--wax);
+  margin: 0 0 0.4rem;
+}
+
+.telegram__replik {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: var(--wax-dark);
+  margin: 0;
+}
+
 .telegram__fotnot {
   font-family: 'Courier Prime', monospace;
   font-size: 0.72rem;
