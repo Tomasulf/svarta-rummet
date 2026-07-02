@@ -16,7 +16,7 @@ export default function NationVy({ slug }) {
       const rådata = localStorage.getItem(lagringsnyckel(slug))
       if (rådata) {
         const sparat = JSON.parse(rådata)
-        const giltigt = sparat.aktuellt && typeof sparat.aktuellt.replik === 'string'
+        const giltigt = sparat.aktuellt && typeof sparat.aktuellt.replik === 'string' && typeof sparat.aktuellt.drag === 'string'
         setHistorik(giltigt ? (sparat.historik || []) : [])
         setAktuellt(giltigt ? sparat.aktuellt : null)
       }
@@ -83,8 +83,9 @@ export default function NationVy({ slug }) {
               <span>HEMLIGT UPPDRAG</span>
               <span>{aktuellt.kod}</span>
             </div>
-            <p className="telegram__etikett">Ditt mål</p>
-            <p className="telegram__direktiv telegram__direktiv--stor">{aktuellt.mal}</p>
+            <p className="telegram__etikett">Draget att forcera — riktat mot {aktuellt.till}</p>
+            <p className="telegram__direktiv telegram__direktiv--stor">{aktuellt.drag}</p>
+            <p className="telegram__kontext">{aktuellt.mal}</p>
             <div className="telegram__delare" />
             <p className="telegram__etikett">Din replik — säg ordagrant, till {aktuellt.till}</p>
             <p className="telegram__replik">&ldquo;{aktuellt.replik}&rdquo;</p>
