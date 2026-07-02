@@ -82,7 +82,11 @@ export default function NationVy({ slug }) {
               <span>HEMLIGT UPPDRAG</span>
               <span>{aktuellt.kod}</span>
             </div>
-            <p className="telegram__direktiv telegram__direktiv--stor">{aktuellt.text}</p>
+            <p className="telegram__etikett">Ditt mål</p>
+            <p className="telegram__direktiv telegram__direktiv--stor">{aktuellt.mal}</p>
+            <div className="telegram__delare" />
+            <p className="telegram__etikett">Din replik — säg ordagrant, till {aktuellt.till}</p>
+            <p className="telegram__replik">&ldquo;{aktuellt.replik}&rdquo;</p>
             <div className="telegram__delare" />
             <p className="telegram__fotnot">
               Visa inte skärmen för de andra. Röj hellre uppdraget genom hur du spelar.
